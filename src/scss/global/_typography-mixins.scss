@@ -1,0 +1,167 @@
+@mixin font-h1 {
+  font-size: rem-calc(40);
+  line-height: rem-calc(53);
+  font-family: $primary-font;
+  font-weight: 400;
+  padding-bottom: 24px;
+
+  
+  @include mq(medium-up) {
+    body:not(.single-post) {
+      font-size: rem-calc(70);
+      line-height: rem-calc(82);
+      line-height: auto;
+      padding-bottom: spx(11);
+    }    
+  }
+
+  @include mq(xlarge-up) {
+    font-size: rem-calc(80);
+    line-height: rem-calc(95);
+    line-height: auto;
+    padding-bottom: spx(11);
+  }
+}
+
+@mixin font-h2 {
+  font-size: rem-calc(27);
+  line-height: rem-calc(41);
+  font-family: $primary-font;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.02rem;
+  margin-bottom: spx(4);
+
+  @include mq(large-up) {
+    font-size: rem-calc(40);
+    line-height: rem-calc(58);
+    margin-bottom: spx(3);
+  }
+}
+
+@mixin font-h3 {
+  font-size: rem-calc(20);
+  line-height: rem-calc(30);
+  font-family: $primary-font;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.02rem;
+  margin-bottom: spx(3);
+
+  @include mq(large-up) {
+    font-size: rem-calc(28);
+    line-height: rem-calc(44);
+    margin-bottom: spx(2);
+  }
+}
+
+@mixin font-h4 {
+  font-size: rem-calc(22);
+  line-height: rem-calc(36);
+  font-family: $primary-font;
+  margin-bottom: spx(1);
+
+  @include mq(large-up) {
+    font-size: rem-calc(25);
+    line-height: rem-calc(36);
+    margin-bottom: spx(2);
+  }
+}
+
+@mixin font-lead {
+  font-size: rem-calc(20);
+  line-height: rem-calc(34);
+  font-family: $body-serif;
+
+  @include mq(large-up) {
+    font-size: rem-calc(25);
+    line-height: rem-calc(35);
+  }
+}
+
+@mixin font-body {
+  font-size: rem-calc(16);
+  line-height: rem-calc(26);
+  font-family: $primary-font;
+  margin-bottom: spx(2);
+
+  @include mq(large-up) {
+    font-size: rem-calc(18);
+    line-height: rem-calc(29);
+  }
+}
+
+@mixin font-small {
+  font-size: rem-calc(14);
+  line-height: rem-calc(23);
+  font-family: $primary-font;
+  margin-bottom: spx(1);
+
+  @include mq(large-up) {
+    font-size: rem-calc(14);
+    line-height: rem-calc(23);
+  }
+}
+
+@mixin font-display {
+  font-size: rem-calc(16);
+  line-height: rem-calc(26);
+  font-family: $primary-font;
+  font-weight:600;
+
+  @include mq(large-up) {
+    font-size: rem-calc(23);
+    line-height: rem-calc(35);
+    font-weight:400;
+  }
+}
+
+
+@mixin font-button-label {
+  font-family: $primary-font;
+  font-style: italic;
+  font-weight: 600;
+  font-size: rem-calc(16);
+  line-height: rem-calc(20);
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+
+  @include mq(large-up) {
+    font-size: rem-calc(18);
+    line-height: rem-calc(24);
+  }
+}
+
+@mixin font-menu-label {
+  font-family: $primary-font;
+  font-style: italic;
+  font-weight: 600;
+  font-size: rem-calc(16);
+  line-height: rem-calc(32);
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+
+  @include mq(large-up) {
+    font-size: rem-calc(16);
+    line-height: rem-calc(24);
+  }
+}
+
+@mixin font-display {
+  font-size: rem-calc(19);
+  line-height: rem-calc(27);
+  font-family: $primary-font;
+  font-weight: 400;
+  padding-bottom: 0px;
+
+  @include mq(large-up) {
+    font-size: rem-calc(23);
+    line-height: rem-calc(35);
+  }
+}

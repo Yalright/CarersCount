@@ -1,0 +1,288 @@
+.block-info-contact {
+  background: $white;
+  padding: 50px 0;
+  background: $white;
+
+
+  &:nth-child(even) {
+    background: $blue-200;
+
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    p.title {
+      font-family: $primary-font;
+      font-weight: bold;
+      color: $blue;
+      font-size: rem-calc(50);
+      line-height: 100%;
+      text-align: center;
+      flex: 1 0 100%;
+      margin-bottom: 40px;
+
+      @include mq(large-up) {
+        font-size: rem-calc(50);
+        text-align: left;
+
+      }
+
+      @include mq(xxlarge-up) {
+        font-size: rem-calc(72);
+      }
+    }
+
+    .content-container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+
+      @include mq(large-up) {
+        flex-wrap: nowrap;
+      }
+
+      .content {
+        flex: 1 0 100%;
+        order: 2;
+
+        @include mq(large-up) {
+          flex: 1 0 calc(66.66% - 15px);
+          order: 1;
+        }
+
+        .useful-links-title {
+          font-weight: bold;
+          color: $blue;
+          margin: 20px 0 10px;
+        }
+
+        ul.useful-links {
+          @include ulListReset;
+        }
+
+        color: $grey;
+        font-size: rem-calc(24);
+
+        p,
+        p,
+        ul,
+        ol,
+        li,
+        strong,
+        em {
+          color: $grey;
+          font-size: rem-calc(24);
+        }
+
+        p {
+          padding-bottom: 24px;
+        }
+
+        ul {
+          padding-left: 25px;
+
+          li {
+            margin-bottom: 15px;
+          }
+        }
+
+        p a,
+        a {
+          font-size: rem-calc(24);
+          color: $blue;
+          text-decoration: underline;
+        }
+
+      }
+
+      .image {
+        flex: 1 0 100%;
+        order: 1;
+
+        @include mq(large-up) {
+          flex: 1 0 calc(33.33% - 15px);
+          order: 2;
+        }
+
+        figure {
+          width: 100%;
+          aspect-ratio: 3 / 2;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+    }
+
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 30px 0 0 0;
+
+      @include mq(large-up) {
+        flex-wrap: nowrap;
+      }
+
+      @include mq(large-down) {
+        align-items: center;
+      }
+
+      figure {
+        flex: 0 1 96px;
+        width: 96px;
+
+        @include mq(large-up) {
+          flex: 0 1 215px;
+        }
+      }
+
+      .title {
+        font-size: rem-calc(24);
+        line-height: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex: 0 1 calc(100% - 96px);
+        text-align: left;
+        padding-left: 20px;
+
+        @include mq(large-up) {
+          display: none;
+        }
+      }
+
+      .details {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0 1 100%;
+        position: relative;
+
+        @include mq(large-up) {
+          padding: 0 0 0 30px;
+          flex: 0 1 auto;
+        }
+
+        .title {
+          font-size: rem-calc(24);
+          line-height: 100%;
+          padding: 0;
+          margin: 0;
+          display: none;
+
+          @include mq(large-up) {
+            display: block;
+          }
+        }
+
+        .form-wrapper {
+          width: 100%;
+
+          form {
+            display: flex;
+            flex-wrap: wrap;
+
+            .wpcf7-not-valid-tip {
+              display: none;
+            }
+
+            input.wpcf7-text {
+              margin-right: 25px;
+              font-family: $primary-font;
+              font-weight: bold;
+              font-size: rem-calc(24);
+              line-height: rem-calc(26);
+
+              background: $white;
+              border: 1px solid $blue;
+              border-radius: 8px;
+              padding: 15px 25px;
+              width: 100%;
+              color: $blue;
+              margin: 20px 0 0 0;
+
+              @include mq(large-up) {
+                margin: 0 20px 0 0;
+                width: calc(40% - 20px);
+              }
+
+
+              &::placeholder {
+                color: rgba(14, 90, 161, 0.7);
+                font-size: rem-calc(14);
+              }
+
+              &.wpcf7-not-valid {
+                background: rgba(255, 0, 0, 0.3);
+              }
+
+
+            }
+
+            input[type=submit] {
+              @include buttonReset;
+              margin-right: 25px;
+              font-family: $primary-font;
+              font-weight: bold;
+              font-size: rem-calc(24);
+              line-height: rem-calc(26);
+
+              @include buttonReset;
+              background: $blue;
+              color: $white;
+              padding: 15px 25px;
+              border-radius: 8px;
+              margin: 20px 0 0 0;
+              min-width: 20%;
+
+              cursor: pointer;
+            }
+
+            .wpcf7-acceptance {
+              .wpcf7-list-item {
+                padding: 0;
+                margin: 0;
+
+                input[type=checkbox] {}
+
+                .wpcf7-list-item-label {
+                  font-size: rem-calc(24);
+                  color: $blue;
+                }
+              }
+            }
+
+            span.form-acceptance {
+              display: block;
+              margin-top: 15px;
+              font-size: rem-calc(18);
+              color: $blue;
+
+              a {
+                color: $blue;
+              }
+            }
+
+
+
+          }
+
+          .wpcf7-spinner {
+            display: none;
+          }
+        }
+
+
+      }
+
+    }
+
+  }
+}

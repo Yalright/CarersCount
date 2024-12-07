@@ -1,0 +1,227 @@
+.block-newsletter {
+  background: $white;
+  padding: 50px 0;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    p.title {
+      font-family: $primary-font;
+      font-weight: bold;
+      color: $blue;
+      font-size: rem-calc(50);
+      line-height: 100%;
+      text-align: center;
+      flex: 1 0 100%;
+      margin-bottom: 40px;
+
+      @include mq(large-up) {
+        font-size: rem-calc(50);
+      }
+
+      @include mq(xxlarge-up) {
+        font-size: rem-calc(72);
+      }
+    }
+
+    .newsletter-container {
+      .wpcf7-spinner, .wpcf7-not-valid-tip {
+        display: none;
+      }
+      label {
+        // @include visually-hidden;
+      }
+
+      width:100%;
+
+
+
+      // form #mc_embed_signup_scroll {
+      //   display: flex;
+      //   justify-content: center;
+      //   flex-wrap: wrap;
+
+      //   @include mq(large-up) {
+      //     flex-wrap: nowrap;
+      //   }
+
+      //   .mc-field-group {
+      //     width: 100%;
+      //     max-width: 500px;
+      //   }
+
+      //   .optionalParent {
+      //     width: 100%;
+      //     max-width: 500px;
+
+      //     @include mq(large-up) {
+      //       max-width: min-content;
+      //       margin-left: 20px;
+      //     }
+      //   }
+
+      //   input {
+      //     margin-right: 25px;
+      //     font-family: $primary-font;
+      //     font-weight: bold;
+      //     font-size: rem-calc(24);
+      //     line-height: rem-calc(26);
+
+      //     &[type="email"] {
+      //       background: $blue-200;
+      //       border: 0px solid $blue;
+      //       border-radius: 8px;
+      //       padding: 15px 25px;
+      //       width: 100%;
+
+      //       &::placeholder {
+      //         color: $blue;
+      //       }
+      //     }
+
+
+      //     &[type=submit] {
+      //       @include buttonReset;
+      //       background: $blue;
+      //       color: $white;
+      //       padding: 15px 25px;
+      //       border-radius: 8px;
+      //       width: 100%;
+      //       margin: 20px 0 0 0;
+
+      //       @include mq(large-up) {
+      //         margin: 0 20px 0 0;
+      //       }
+      //     }
+      //   }
+      // }
+
+      form.wpcf7-form {
+        display:flex;
+        justify-content: center;
+        flex-wrap:wrap;
+        >p {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+
+          @include mq(large-up) {
+            flex-wrap: wrap;
+            flex: 0 1 900px;
+          }
+
+          span.wpcf7-form-control-wrap {
+            width: 100%;
+            // max-width: 500px;
+            display: inline-block;
+            @include mq(large-up) {
+              flex:0 1 500px;
+            }
+          }
+
+          .wpcf7-spinner, .wpcf7-not-valid-tip {
+            display: none;
+          }
+
+          input {
+            margin-right: 25px;
+            font-family: $primary-font;
+            font-weight: bold;
+            font-size: rem-calc(24);
+            line-height: rem-calc(26);
+
+            &[type="email"] {
+              background: $blue-200;
+              border: 0px solid $blue;
+              border-radius: 8px;
+              padding: 15px 25px;
+              width: 100%;
+
+              &::placeholder {
+                color: $blue;
+              }
+              &.wpcf7-not-valid {
+                background:rgba(255,0,0,0.3);
+              }
+            }
+
+
+            &[type=submit] {
+              @include buttonReset;
+              background: $blue;
+              color: $white;
+              padding: 15px 25px;
+              border-radius: 8px;
+              width: 100%;
+              margin: 20px 0 0 0;
+
+              @include mq(large-up) {
+                margin: 0;
+                width: calc(100% - 550px);
+                margin:0 0 0 20px;
+              }
+            }
+
+            &[type="checkbox"] {
+
+margin-right:5px;
+            }
+            
+          }
+
+          .wpcf7-acceptance {
+            .wpcf7-list-item {
+              padding: 0;
+              margin: 0;
+
+              input[type=checkbox] {}
+
+              .wpcf7-list-item-label {
+                font-size: rem-calc(24);
+                color: $blue;
+              }
+            }
+            
+          }
+
+          span.form-acceptance {
+            display: block;
+            margin-top: 15px;
+            font-size: rem-calc(18);
+            color: $blue;
+
+            a {
+              color: $blue;
+            }
+            .wpcf7-list-item-label {
+              font-size:rem-calc(18) !important;
+            }
+          }
+
+          .wpcf7-response-output {
+            flex:1 0 100%;
+            max-width:900px;
+          }
+        }
+
+        
+      }
+    }
+
+    figure {
+      width: 100%;
+      max-width: 1333px;
+      height: auto;
+      margin: 30px auto 50px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+}

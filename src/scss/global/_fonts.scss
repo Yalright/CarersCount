@@ -1,0 +1,22 @@
+// Font definitions
+$filson-soft: "filson-soft";
+$filson-soft--bold: "FilsonSoft-bold";
+
+// Font Families
+$primary-font: $filson-soft, sans-serif;
+$primary-font-bold: $filson-soft, sans-serif;
+
+$body-font: $primary-font;
+
+// Font Weights
+$weight-light: 300;
+$weight-normal: normal;
+$weight-medium: 500;
+$weight-semi-bold: 600;
+$weight-bold: bold;
+$weight-black: 900;
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

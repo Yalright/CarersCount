@@ -1,0 +1,69 @@
+// Colours
+$white: #ffffff;
+$black: #000000;
+
+$blue: #0e5aa1;
+$blue-200: #e6eef5;
+$pink: #cf3489;
+$green: #2b8736;
+$green-200: #c0dbc3;
+
+$grey: #575756;
+
+$primary-colour:$blue;
+$secondary-colour:$pink;
+
+
+
+// Colour Palette & Classes
+// Same palette colours defined in functions.php
+$palette-colors: ("white", #ffffff),
+("black", $black),
+("blue", $blue),
+("blue-200", $blue-200),
+("pink", $pink),
+("green", $green),
+("grey", $grey);
+
+.guten-block {
+  position: relative;
+  z-index: 1;
+
+  &.has-background,
+  .has-background {
+    @each $color in $palette-colors {
+      &.has-#{nth($color,1)}-background-color {
+        background-color: nth($color, 2);
+      }
+    }
+  }
+
+  body:not(.home):not(.wp-admin) & {
+    &:not(.block-hero-banner) {
+      &:nth-child(odd) {
+        background: $white !important;
+      }
+      &:nth-child(even) {
+        background: $blue-200 !important;
+      }
+    }
+    
+  }
+
+  @each $color in $palette-colors {
+    .has-#{nth($color,1)}-font-colour {
+      color: nth($color, 2) !important;
+    }
+  }
+  
+}
+
+
+// Other
+$border-radius: 4px;
+$lg-container: 1200px;
+$letter-spacing: 1.8px;
+$global-padding: 16px;
+$global-margin: 16px;
+
+$gutter-spacing: 25px;

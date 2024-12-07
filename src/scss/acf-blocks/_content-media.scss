@@ -1,0 +1,256 @@
+.block-content-media {
+  background: $blue-200;
+  padding: 50px 0;
+
+  &:nth-child(even) {
+    background: $white;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq(large-up) {
+      flex-wrap: wrap;
+    }
+
+    p.title, h1.title {
+      font-family: $primary-font;
+      font-weight: bold;
+      color: $blue;
+      font-size: rem-calc(50);
+      line-height: 100%;
+      text-align: left;
+      flex: 1 0 100%;
+      margin-bottom: 40px;
+
+      @include mq(large-up) {
+        font-size: rem-calc(50);
+      }
+
+      @include mq(xxlarge-up) {
+        font-size: rem-calc(72);
+      }
+    }
+
+    .content {
+      flex: 0 1 100%;
+
+      @include mq(large-up) {
+        flex: 0 1 50%;
+      }
+
+
+
+      .wysiwyg-wrapper {
+        color: $grey;
+        font-size: rem-calc(24);
+
+        p,
+        p,
+        ul,
+        ol,
+        li,
+        strong,
+        em {
+          color: $grey;
+          font-size: rem-calc(24);
+        }
+
+        p {
+          padding-bottom: 24px;
+        }
+
+        ul {
+          padding-left: 25px;
+
+          li {}
+        }
+
+        p a,
+        a {
+          font-size: rem-calc(24);
+          color: $blue;
+        }
+      }
+
+      .accordion-wrapper {
+        padding: 30px 0;
+
+        .single-item {
+          border-bottom: 1px solid $blue;
+          padding: 20px 0;
+
+          span {
+            display: block;
+            font-size: rem-calc(24);
+
+            &.question {
+              font-weight: bold;
+              color: $blue;
+              cursor: pointer;
+
+              &:after {
+                content: "+";
+                @include transition();
+                display: inline-block;
+              }
+
+              &.active {
+                &:after {
+                  transform: rotate(45deg);
+                }
+              }
+            }
+
+            &.answer {
+              color: $grey;
+              display: none;
+
+              &.active {
+                display: block;
+                padding-top:20px;
+              }
+
+              color: $grey;
+              font-size: rem-calc(24);
+
+              p,
+              p,
+              ul,
+              ol,
+              li,
+              strong,
+              em {
+                color: $grey;
+                font-size: rem-calc(24);
+              }
+
+              p {
+                padding-bottom: 24px;
+                word-break: break-word;
+              }
+
+              ul {
+                padding-left: 25px;
+
+                li {}
+              }
+
+              p a,
+              a {
+                font-size: rem-calc(24);
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+
+
+    }
+
+    .media {
+      flex: 0 1 100%;
+
+      @include mq(large-up) {
+        flex: 0 1 50%;
+      }
+    }
+
+    &.half {
+
+      .content,
+      .media {
+        flex: 0 1 100%;
+
+        @include mq(large-up) {
+          flex: 0 1 50%;
+        }
+      }
+
+      .content {
+        padding: 0 0 40px 0;
+
+        @include mq(medium-up) {
+          padding: 0 40px 0 0;
+        }
+      }
+    }
+
+    &.two-thirds {
+      .content {
+        flex: 0 1 100%;
+        padding: 0 0 40px 0;
+
+        @include mq(medium-up) {
+          flex: 0 1 50%;
+          padding: 0 40px 0 0;
+
+
+
+        }
+
+        @include mq(large-up) {
+          flex: 0 1 66.666%;
+        }
+      }
+
+      .media {
+        flex: 0 1 100%;
+
+        @include mq(medium-up) {
+          flex: 0 1 50%;
+        }
+
+        @include mq(large-up) {
+          flex: 0 1 33.33%;
+        }
+      }
+    }
+
+    &.three-quarters {
+      .content {
+        flex: 0 1 100%;
+        padding: 0 0 40px 0;
+
+        @include mq(medium-up) {
+          flex: 0 1 50%;
+          padding: 0 40px 0 0;
+
+
+        }
+
+        @include mq(large-up) {
+          flex: 0 1 75%;
+        }
+      }
+
+      .media {
+        flex: 0 1 100%;
+
+        @include mq(medium-up) {
+          flex: 0 1 50%;
+        }
+
+        @include mq(large-up) {
+          flex: 0 1 25%;
+        }
+      }
+    }
+
+    &.full {
+      .content {
+        flex: 0 1 100%;
+      }
+
+      .media {
+        flex: 0 1 100%;
+        display: none;
+      }
+    }
+  }
+}

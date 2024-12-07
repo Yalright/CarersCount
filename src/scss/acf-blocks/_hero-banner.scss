@@ -1,0 +1,71 @@
+.guten-block.block-hero-banner {
+  background: $pink !important;
+  padding: 50px 0;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+
+    .text-container {
+      flex: 1 0 calc(66.66% - 30px);
+
+      h1 {
+        font-family: $primary-font;
+        font-weight: bold;
+        color: $white;
+        font-size: rem-calc(72);
+        line-height: 100%;
+        text-align: center;
+
+        @include mq(large-up) {
+          font-size: rem-calc(100);
+          text-align: left;
+        }
+      }
+
+      p {
+        font-size: rem-calc(24);
+        line-height: rem-calc(27);
+        line-height: 100%;
+        font-weight: bold;
+        color: $white;
+        text-align: center;
+        margin-top: 20px;
+
+        @include mq(large-up) {
+          text-align: left;
+          font-size: rem-calc(30);
+        }
+
+        @include mq(xxlarge-up) {
+          font-size: rem-calc(30);
+        }
+      }
+    }
+
+    .image-container {
+      flex: 1 0 calc(33.33% - 30px);
+      display: none;
+
+      @include mq(large-up) {
+        display: block;
+      }
+
+      figure {
+        width: 100%;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+
+    }
+
+  }
+}

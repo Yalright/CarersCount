@@ -1,0 +1,135 @@
+.block-testimonial-carousel {
+  background: $blue-200;
+  padding: 50px 0;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    p.title {
+      font-family: $primary-font;
+      font-weight: bold;
+      color: $blue;
+      font-size: rem-calc(60);
+      line-height: 100%;
+      text-align: center;
+      flex: 1 0 100%;
+      margin-bottom: 40px;
+
+      @include mq(large-up) {
+        font-size: rem-calc(50);
+      }
+
+      @include mq(xxlarge-up) {
+        font-size: rem-calc(72);
+      }
+    }
+
+
+    .testimonial-container-images {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+
+      @include mq(large-up) {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+
+      // .slick-list {
+      //   width:100%;
+      //   display:flex;
+      //   justify-content: space-between;
+
+      // }
+
+      .column {
+        flex: 0 1 100%;
+        margin: 0 auto;
+        text-align: center;
+        @include mq(medium-up) {
+          margin:0 20px;
+        }
+
+        @include mq(large-up) {
+          flex: 0 1 auto;
+        }
+
+        p {
+          text-align:center;
+        }
+        &--name {
+          font-family:$primary-font;
+          font-weight:bold;
+          color:$blue;
+          font-size:rem-calc(36);
+          line-height:rem-calc(40);
+          margin-top:30px;
+        }
+        &--job-title {
+          font-family:$primary-font;
+          font-weight:bold;
+          color:$blue;
+          font-size:rem-calc(24);
+          line-height:rem-calc(40);
+        }
+        &--testimonial {
+          font-family:$primary-font;
+          font-weight:bold;
+          color:$grey;
+          font-size:rem-calc(24);
+          line-height:rem-calc(32);
+          font-style: italic;
+          padding:30px 0;
+        }
+
+        figure {
+          img {
+            margin:0 auto;
+          }
+        }
+      }
+    }
+
+    .testimonial-container-content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin:30px 0;
+      .column {
+        flex:1 0 100%;
+        p {
+          text-align:center;
+        }
+        &--name {
+          font-family:$primary-font;
+          font-weight:bold;
+          color:$blue;
+          font-size:rem-calc(36);
+          line-height:rem-calc(40);
+        }
+        &--job-title {
+          font-family:$primary-font;
+          font-weight:bold;
+          color:$blue;
+          font-size:rem-calc(24);
+          line-height:rem-calc(40);
+        }
+        &--testimonial {
+          font-family:$primary-font;
+          font-weight:bold;
+          color:$grey;
+          font-size:rem-calc(24);
+          line-height:rem-calc(32);
+          font-style: italic;
+          padding:30px 0;
+        }
+      }
+    }
+  }
+}

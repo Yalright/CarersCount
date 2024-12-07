@@ -1,0 +1,66 @@
+# -----------------------------------------------------------------
+# .gitignore for the "barnsleycarers" WordPress theme
+# Updated for repository relocation to "wp-content/themes/barnsleycarers/"
+# -----------------------------------------------------------------
+
+# Ignore everything outside the current directory
+# /*
+!.gitignore
+!*.md
+!.nvmrc
+!bitbucket-pipelines.yml
+!deploy/
+!deploy/*.sh
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Ignore temporary editor/IDE/project files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.idea/
+.vscode/
+*.iml
+
+# Ignore logs and database backups
+*.log
+*.sql
+*.sqlite
+
+# Ignore compiled binaries
+*.class
+*.o
+*.so
+*.dll
+*.exe
+*.com
+
+# Ignore packaged files
+*.7z
+*.dmg
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore build artifacts
+# dist/
+# build/
+# *.min.css
+# *.min.js
+
+# Ignore any personal or sensitive data
+.env
+*.local
+
+# Specific files or directories within the theme
+# Add any directories or files you want to ignore here:
+# assets/css/vendor/
+# assets/js/vendor/

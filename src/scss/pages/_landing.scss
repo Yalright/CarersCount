@@ -1,0 +1,107 @@
+.page-landing {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(127, 206, 241, 1) 100%);
+
+    #content {
+
+        >.container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 80px;
+
+            @include mq(large-up) {
+                max-width: 1200px;
+            }
+
+            .block-wysiwyg {
+                margin: 40px 0;
+                color: $blue;
+                font-weight: 600;
+                flex: 1 0 calc(50% - 80px);
+                background: transparent !important;
+
+                &.guten-block {
+                    background: transparent !important;
+                }
+
+                p {
+                    color: $blue;
+                    font-weight: 600;
+                }
+            }
+
+            .landing-maps {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 40px;
+                flex: 1 0 calc(50% - 80px);
+
+                @include mq(large-up) {
+                    flex-wrap: wrap;
+                }
+
+                .map-item {
+                    flex: 1 0 100%;
+                    position: relative;
+
+                    @include mq(medium-up) {
+                        flex: 1 0 100%;
+                        max-width: 100%;
+                    }
+
+                    picture {
+                        display: block;
+                        width: 100%;
+
+                        img,
+                        svg {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+
+                        svg {
+                            .st0 {
+                                transition: all ease 0.2s;
+                            }
+                        }
+                    }
+
+                    a {
+                        position: absolute;
+                        color: $white;
+                        font-weight: 600;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        inset: 0;
+                        text-align: center;
+                        width: 100%;
+                        height: 100%;
+                        text-decoration: none;
+                        font-size: rem-calc(32);
+
+                        @include mq(medium-up) {
+                            font-size: rem-calc(24);
+                        }
+
+                        @include mq(large-up) {
+                            font-size: rem-calc(32);
+                        }
+
+                        &:hover {
+                            +picture {
+                                svg {
+                                    .st0 {
+                                        fill: $pink;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
