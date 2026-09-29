@@ -15,12 +15,12 @@ add_action('acf/init', 'my_acf_init');
 function my_acf_init()
 {
 
-  // // check function exists
-  if (function_exists('acf_register_block')) {
+  // check function exists
+  if (function_exists('acf_register_block_type')) {
 
 
     // Hero Title
-    acf_register_block(array(
+    acf_register_block_type(array(
       'name'        => 'hero-banner',
       'title'        => __('Hero Banner'),
       'description'    => __('Displays hero banner'),
@@ -28,10 +28,11 @@ function my_acf_init()
       'category'      => 'custom-blocks',
       'icon'        => 'cover-image',
       'keywords'      => array('header', 'image'),
+      'api_version'  => 3,
     ));
 
     // Hero Title
-    acf_register_block(array(
+    acf_register_block_type(array(
       'name'        => 'link-columns',
       'title'        => __('Link Columns'),
       'description'    => __('Displays Link Columns'),
@@ -39,10 +40,11 @@ function my_acf_init()
       'category'      => 'custom-blocks',
       'icon'        => 'cover-image',
       'keywords'      => array('links', 'columns'),
+      'api_version'  => 3,
     ));
 
     // Hero Title
-    acf_register_block(array(
+    acf_register_block_type(array(
       'name'        => 'testimonial-carousel',
       'title'        => __('Testimonial Carousel'),
       'description'    => __('Displays Testimonials'),
@@ -50,10 +52,11 @@ function my_acf_init()
       'category'      => 'custom-blocks',
       'icon'        => 'cover-image',
       'keywords'      => array('testimonial', 'carousel'),
+      'api_version'  => 3,
     ));
 
     // Hero Title
-    acf_register_block(array(
+    acf_register_block_type(array(
       'name'        => 'newsletter',
       'title'        => __('Newsletter'),
       'description'    => __('Newsletter'),
@@ -61,10 +64,11 @@ function my_acf_init()
       'category'      => 'custom-blocks',
       'icon'        => 'cover-image',
       'keywords'      => array('newsletter'),
+      'api_version'  => 3,
     ));
 
     // Hero Title
-    acf_register_block(array(
+    acf_register_block_type(array(
       'name'        => 'info-contact',
       'title'        => __('Info & Contact'),
       'description'    => __('Information block with contact form'),
@@ -72,10 +76,11 @@ function my_acf_init()
       'category'      => 'custom-blocks',
       'icon'        => 'cover-image',
       'keywords'      => array('information', 'contact', 'form'),
+      'api_version'  => 3,
     ));
 
 
-    acf_register_block(array(
+    acf_register_block_type(array(
       'name'        => 'downloads',
       'title'        => __('Downloads'),
       'description'    => __(''),
@@ -83,9 +88,10 @@ function my_acf_init()
       'category'      => 'custom-blocks',
       'icon'        => 'cover-image',
       'keywords'      => array('downloads'),
+      'api_version'  => 3,
     ));
 
-    acf_register_block(array(
+    acf_register_block_type(array(
       'name'        => 'content-media',
       'title'        => __('Content + Media'),
       'description'    => __(''),
@@ -93,9 +99,10 @@ function my_acf_init()
       'category'      => 'custom-blocks',
       'icon'        => 'cover-image',
       'keywords'      => array('content', 'media'),
+      'api_version'  => 3,
     ));
 
-    acf_register_block(array(
+    acf_register_block_type(array(
       'name'        => 'contact-block',
       'title'        => __('Contact Block'),
       'description'    => __(''),
@@ -103,6 +110,7 @@ function my_acf_init()
       'category'      => 'custom-blocks',
       'icon'        => 'cover-image',
       'keywords'      => array('contact', 'form'),
+      'api_version'  => 3,
     ));
   }
 }

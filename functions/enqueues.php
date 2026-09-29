@@ -61,19 +61,26 @@ add_filter('wp_print_scripts', 'remove_wp_i18n_inline_scripts');
 add_filter('wp_print_footer_scripts', 'remove_wp_i18n_inline_scripts');
 
 /**
- * Enqueue block JavaScript and CSS for the editor
+ * Enqueue CSS for block previews inside the iframe editor.
  */
 function my_block_plugin_editor_scripts()
 {
-	// Enqueue block editor styles
-	wp_enqueue_style('site-css-admin', get_template_directory_uri() . '/assets/css/main-admin.css', array(), '1');
-	// wp_enqueue_style('fontawesome-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css', array(), 'all');
-	// wp_enqueue_style('slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css', array(), 'all');
-
-	// Enqueue block editor JS
-	// wp_enqueue_script('site-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array('jquery'), true, '1.0');
-	// wp_enqueue_script('slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), true);
+	if (is_admin()) {
+		wp_enqueue_style('site-css-admin', get_template_directory_uri() . '/assets/css/main-admin.css', array(), '1');
+	}
 }
 
-// Hook the enqueue functions into the editor
-add_action('enqueue_block_editor_assets', 'my_block_plugin_editor_scripts');
+// enqueue_block_assets loads styles into the iframe editor correctly.
+add_action('enqueue_block_assets', 'my_block_plugin_editor_scripts');
+
+/**
+ * Ensure the classic editor dependencies ACF WYSIWYG fields need are available
+ * before ACF initializes block fields in the block editor.
+ */
+function carerscount_enqueue_block_editor_dependencies()
+{
+	if (function_exists('wp_enqueue_editor')) {
+		wp_enqueue_editor();
+	}
+}
+add_action('enqueue_block_editor_assets', 'carerscount_enqueue_block_editor_dependencies');
