@@ -568,6 +568,42 @@
             }
           }
 
+          &.sf-field-taxonomy-event-category {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+
+            @include mq(medium-down) {
+              display: flex;
+              flex-wrap: wrap;
+
+              h4 {
+                display: 1 0 100%;
+              }
+
+              label {
+                display: 1 0 100%;
+                width: 100%;
+
+                select {
+                  width: 100%;
+                }
+              }
+            }
+
+            select {
+              font-size: rem-calc(16px);
+              color: $black;
+              padding: 8px;
+              border: 2px solid $black;
+              border-radius: 8px;
+
+              &::placeholder {
+                color: $black;
+              }
+            }
+          }
+
           h4 {
             color: $blue;
             font-size: rem-calc(24);

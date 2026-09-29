@@ -31,7 +31,7 @@ $title = get_field('title');
           <div class="column">
             <?php if (!empty($image)) { ?>
               <figure>
-                <img src="<?php echo $image['url']; ?>" alt="<?php echo $name; ?> Profile Photo" width="270" height="270" />
+                <img src="<?php echo $image['sizes']['medium-cropped']; ?>" alt="<?php echo $name; ?> Profile Photo" width="270" height="270" />
               </figure>
             <?php } ?>
 

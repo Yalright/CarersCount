@@ -4,7 +4,6 @@ Donate link:
 Requires at least: 5.0
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.0.0
 License: Proprietary
 License URI: [Include a link to your licensing terms, if available]
 Tags: custom, carers, accessibility, responsive

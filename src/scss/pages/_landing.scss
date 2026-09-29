@@ -1,4 +1,4 @@
-.page-landing {
+.page-template-template-landing {
     background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(127, 206, 241, 1) 100%);
 
     #content {
@@ -10,14 +10,19 @@
 
             @include mq(large-up) {
                 max-width: 1200px;
+                justify-content: center;
             }
 
             .block-wysiwyg {
                 margin: 40px 0;
                 color: $blue;
                 font-weight: 600;
-                flex: 1 0 calc(50% - 80px);
+                flex: 1 0 100%;
                 background: transparent !important;
+
+                @include mq(large-up) {
+                    flex: 0 1 calc(45% - 80px);
+                }
 
                 &.guten-block {
                     background: transparent !important;
@@ -34,17 +39,21 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 40px;
-                flex: 1 0 calc(50% - 80px);
+                flex: 1 0 100%;
 
                 @include mq(large-up) {
                     flex-wrap: wrap;
+                    flex: 0 1 calc(40% - 80px);
+                    padding-top: 40px;
+                    justify-content: flex-start
                 }
 
                 .map-item {
-                    flex: 1 0 100%;
+                    flex: 1 0 calc(50% - 40px);
                     position: relative;
+                    height: fit-content;
 
-                    @include mq(medium-up) {
+                    @include mq(large-up) {
                         flex: 1 0 100%;
                         max-width: 100%;
                     }
@@ -80,7 +89,11 @@
                         width: 100%;
                         height: 100%;
                         text-decoration: none;
-                        font-size: rem-calc(32);
+                        font-size: rem-calc(24);
+
+                        span {
+                            color: $white;
+                        }
 
                         @include mq(medium-up) {
                             font-size: rem-calc(24);
@@ -97,6 +110,24 @@
                                         fill: $pink;
                                     }
                                 }
+                            }
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        a {
+                            span {
+                                position: relative;
+                                top: 20px;
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        a {
+                            span {
+                                position: relative;
+                                // top:-30px;
                             }
                         }
                     }

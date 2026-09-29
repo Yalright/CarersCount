@@ -122,7 +122,7 @@ $event_location   = get_field('event_location');
       </div>
     </div>
 
-    <a href="/events/" class="back-to-events">Back to events</a>
+    <a href="/whats-on/" class="back-to-events">Back to What's On</a>
 
   </div>
 

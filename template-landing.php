@@ -8,6 +8,12 @@
 $content = get_field('content');
 
 ?>
+
+<style>
+html {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(127, 206, 241, 1) 100%);
+}
+  </style>
 <?php get_header('plain'); ?>
 <div id="content" class="page-landing">
   <?php // the_content(); 
@@ -31,7 +37,7 @@ $content = get_field('content');
 
           <?php if (!empty($name) && !empty($url) && !empty($image)) { ?>
             <div class="map-item">
-              <a href="<?php echo $url; ?>"><?php echo $name; ?></a>
+              <a href="<?php echo $url; ?>"><span><?php echo $name; ?></span></a>
               <picture>
                 <img class="svg-inline" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="400" height="400" />
               </picture>
