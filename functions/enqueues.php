@@ -76,11 +76,40 @@ add_action('enqueue_block_assets', 'my_block_plugin_editor_scripts');
 /**
  * Ensure the classic editor dependencies ACF WYSIWYG fields need are available
  * before ACF initializes block fields in the block editor.
+ *
+ * ACF Pro 6.3.9 can receive a Quicktags instance without a settings object in
+ * the WordPress 7.1 iframe editor, which makes ACF's buildQuicktags() crash on
+ * `settings.buttons`. Normalise the Quicktags return object before ACF uses it.
  */
 function carerscount_enqueue_block_editor_dependencies()
 {
 	if (function_exists('wp_enqueue_editor')) {
 		wp_enqueue_editor();
 	}
+
+	wp_add_inline_script(
+		'quicktags',
+		"(function() {\n" .
+		"	if (!window.quicktags || window.quicktags.__carerscountPatched) {\n" .
+		"		return;\n" .
+		"	}\n" .
+		"	var originalQuicktags = window.quicktags;\n" .
+		"	window.quicktags = function(settings) {\n" .
+		"		var editor = originalQuicktags.apply(this, arguments);\n" .
+		"		if (editor) {\n" .
+		"			editor.settings = editor.settings || settings || {};\n" .
+		"			editor.settings.buttons = editor.settings.buttons || '';\n" .
+		"		}\n" .
+		"		return editor;\n" .
+		"	};\n" .
+		"	for (var prop in originalQuicktags) {\n" .
+		"		if (Object.prototype.hasOwnProperty.call(originalQuicktags, prop)) {\n" .
+		"			window.quicktags[prop] = originalQuicktags[prop];\n" .
+		"		}\n" .
+		"	}\n" .
+		"	window.quicktags.__carerscountPatched = true;\n" .
+		"}());",
+		'after'
+	);
 }
 add_action('enqueue_block_editor_assets', 'carerscount_enqueue_block_editor_dependencies');
