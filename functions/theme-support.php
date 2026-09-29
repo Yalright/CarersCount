@@ -3,6 +3,11 @@
 // Theme Colours
 function theme_colour_setup()
 {
+    // Load frontend/theme styles inside the block editor iframe.
+    add_theme_support('editor-styles');
+    add_editor_style('assets/css/main.css');
+    add_editor_style('assets/css/main-admin.css');
+
     // Disable Custom Colors
     add_theme_support('disable-custom-colors');
 

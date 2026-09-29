@@ -29,6 +29,11 @@ function my_acf_init()
       'icon'        => 'cover-image',
       'keywords'      => array('header', 'image'),
       'api_version'  => 3,
+      'mode'         => 'preview',
+      'supports'     => array(
+        'align' => false,
+        'mode'  => true,
+      ),
     ));
 
     // Hero Title
@@ -41,6 +46,11 @@ function my_acf_init()
       'icon'        => 'cover-image',
       'keywords'      => array('links', 'columns'),
       'api_version'  => 3,
+      'mode'         => 'preview',
+      'supports'     => array(
+        'align' => false,
+        'mode'  => true,
+      ),
     ));
 
     // Hero Title
@@ -53,6 +63,11 @@ function my_acf_init()
       'icon'        => 'cover-image',
       'keywords'      => array('testimonial', 'carousel'),
       'api_version'  => 3,
+      'mode'         => 'preview',
+      'supports'     => array(
+        'align' => false,
+        'mode'  => true,
+      ),
     ));
 
     // Hero Title
@@ -65,6 +80,11 @@ function my_acf_init()
       'icon'        => 'cover-image',
       'keywords'      => array('newsletter'),
       'api_version'  => 3,
+      'mode'         => 'preview',
+      'supports'     => array(
+        'align' => false,
+        'mode'  => true,
+      ),
     ));
 
     // Hero Title
@@ -77,6 +97,11 @@ function my_acf_init()
       'icon'        => 'cover-image',
       'keywords'      => array('information', 'contact', 'form'),
       'api_version'  => 3,
+      'mode'         => 'preview',
+      'supports'     => array(
+        'align' => false,
+        'mode'  => true,
+      ),
     ));
 
 
@@ -89,6 +114,11 @@ function my_acf_init()
       'icon'        => 'cover-image',
       'keywords'      => array('downloads'),
       'api_version'  => 3,
+      'mode'         => 'preview',
+      'supports'     => array(
+        'align' => false,
+        'mode'  => true,
+      ),
     ));
 
     acf_register_block_type(array(
@@ -100,6 +130,11 @@ function my_acf_init()
       'icon'        => 'cover-image',
       'keywords'      => array('content', 'media'),
       'api_version'  => 3,
+      'mode'         => 'preview',
+      'supports'     => array(
+        'align' => false,
+        'mode'  => true,
+      ),
     ));
 
     acf_register_block_type(array(
@@ -111,6 +146,11 @@ function my_acf_init()
       'icon'        => 'cover-image',
       'keywords'      => array('contact', 'form'),
       'api_version'  => 3,
+      'mode'         => 'preview',
+      'supports'     => array(
+        'align' => false,
+        'mode'  => true,
+      ),
     ));
   }
 }

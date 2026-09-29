@@ -61,13 +61,24 @@ add_filter('wp_print_scripts', 'remove_wp_i18n_inline_scripts');
 add_filter('wp_print_footer_scripts', 'remove_wp_i18n_inline_scripts');
 
 /**
- * Enqueue CSS for block previews inside the iframe editor.
+ * Enqueue CSS for ACF block previews inside the iframe editor.
+ *
+ * The compiled admin stylesheet is scoped to `.wp-block-post-content`, but the
+ * page editor iframe renders ACF previews in the root block list. Loading the
+ * frontend stylesheet as an editor-only block asset gives previews the same
+ * selectors as the public site, while the admin stylesheet keeps any editor
+ * width tweaks that are still useful.
  */
 function my_block_plugin_editor_scripts()
 {
-	if (is_admin()) {
-		wp_enqueue_style('site-css-admin', get_template_directory_uri() . '/assets/css/main-admin.css', array(), '1');
+	if (!is_admin()) {
+		return;
 	}
+
+	wp_enqueue_style('fontawesome-css-editor', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css', array(), '6.4.2');
+	wp_enqueue_style('slick-css-editor', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css', array(), '1.8.1');
+	wp_enqueue_style('site-css-editor', get_template_directory_uri() . '/assets/css/main.css', array('fontawesome-css-editor', 'slick-css-editor'), '1.0.9');
+	wp_enqueue_style('site-css-admin', get_template_directory_uri() . '/assets/css/main-admin.css', array('site-css-editor'), '1.0.9');
 }
 
 // enqueue_block_assets loads styles into the iframe editor correctly.
